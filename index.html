@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container principal -->
+    <div class="container">
+        <h1>Meu Site</h1>
+    </div>
+
+    <!-- Menu fixo -->
+<nav class="menu">
+    <!-- Texto animado no fundo do menu -->
+    <div class="texto-animado">Bem-vindo ao Meu Site</div>
+    
+    <ul>
+        <li><a href="#" onclick="carregarConteudo('inicio.html')">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</nav>
+
+    <!-- Card que mudará o conteúdo dinamicamente -->
+    <div id="conteudo" class="card">
+        <p>Bem-vindo! Clique no menu para carregar o conteúdo.</p>
+    </div>
+
+    <!-- Rodapé fixo -->
+    <footer class="footer">
+        <p>Criado por Patrick</p>
+    </footer>
+
+    <!-- Script para carregar o conteúdo -->
+    <script src="script.js"></script>
+</body>
+</html>
