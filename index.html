@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
+
+
+    
     <!-- Container principal -->
     <div class="container">
         <h1>1 9 9 4</h1>
@@ -18,15 +21,12 @@
     <div class="texto-animado">Deus acima de tudo</div>
     
     <ul>
-        <li><a href="#" onclick="carregarConteudo('inicio.html')">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#" onclick="carregarConteudo('cards/inicio.html')">Início</a></li>
+        <li><a href="#" onclick="carregarConteudo('cards/sobre.html')">Sobre</a></li>
+        <li><a href="#" onclick="carregarConteudo('cards/servicos.html')">Serviços</a></li>
+        <li><a href="#" onclick="carregarConteudo('cards/contato.html')" >Contato</a></li>
     </ul>
 </nav>
-
-    <!-- Card que mudará o conteúdo dinamicamente -->
-    <div id="conteudo" class="card">
 
 
       <!-- Container para os pôsteres -->
@@ -36,26 +36,26 @@
     <!-- Grid de Pôsteres -->
     <div class="grid-poster">
         <div class="poster tilt">
-            <a href="card1.html">
-                <div class="poster-image" style="background-image: url('1img.jpg');"></div>
+            <a href="cards/inicio.html">
+                <div class="poster-image" style="background-image: url('img/1img.jpg');"></div>
                 <p class="poster-info">Informação curta do Pôster 1</p>
             </a>
         </div>
         <div class="poster tilt">
-            <a href="card2.html">
-                <div class="poster-image" style="background-image: url('2img.webp');"></div>
+            <a href="cards/sobre.html">
+                <div class="poster-image" style="background-image: url('/img/2img.jpg');"></div>
                 <p class="poster-info">Informação curta do Pôster 2</p>
             </a>
         </div>
         <div class="poster tilt">
-            <a href="card3.html">
-                <div class="poster-image" style="background-image: url('3img.jpeg');"></div>
+            <a href="cards/servicos.html">
+                <div class="poster-image" style="background-image: url('img/3img.jpg');"></div>
                 <p class="poster-info">Informação curta do Pôster 3</p>
             </a>
         </div>
         <div class="poster tilt">
-            <a href="card4.html">
-                <div class="poster-image" style="background-image: url('4img.jpg');"></div>
+            <a href="cards/contato.html">
+                <div class="poster-image" style="background-image: url('img/4img.jpg');"></div>
                 <p class="poster-info">Informação curta do Pôster 4</p>
             </a>
         </div>
@@ -63,22 +63,13 @@
 </div>
 
 
-    <!-- Menu de redes sociais acima do footer -->
-<div id="social-menu">
-    <ul>
-        <li><a href="https://wa.me/123456789" target="_blank" title="WhatsApp"><img src="whatsapp-icon.png" alt="WhatsApp"></a></li>
-        <li><a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><img src="instagram-icon.png" alt="Instagram"></a></li>
-        <li><a href="mailto:email@example.com" target="_blank" title="Email"><img src="email-icon.png" alt="Email"></a></li>
-    </ul>
-</div>
-
     <!-- Rodapé fixo -->
     <footer class="footer">
         <p>Em desenvolvimento - Patrick</p>
     </footer>
 
     <!-- Script para carregar o conteúdo -->
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 
     <!-- Link para a biblioteca vanilla-tilt.js -->
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>

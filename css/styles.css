@@ -1,0 +1,211 @@
+/* Estilo global */
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+
+/* Container principal */
+.container {
+    margin-top: 1%;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 0px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);*/
+}
+/*-------------------------------------------------------------------------------------------------------------
+/* Menu */
+.menu {
+    width: 100%;
+
+    background-color: #222;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    position: relative; /* Necessário para o texto animado */
+    overflow: hidden; /* Evita que o texto saia para fora */
+}
+
+/* Texto animado dentro do menu */
+.menu .texto-animado {
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Bem discreto */
+    white-space: nowrap;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    animation: moverTexto 15s linear infinite; /* Animação infinita e suave */
+    pointer-events: none; /* Não permite interação com o texto */
+    user-select: none; /* Não permite seleção do texto */
+    -webkit-user-select: none; /* Garantia para Safari */
+}
+
+/* Animação de movimento */
+@keyframes moverTexto {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: linear-gradient(90deg, #00ff00, #00aaff);
+    color: black;
+    border-radius: 5px;
+}
+/*--------------------------------------------------------------------------------------------------
+/* Estilo do container do conteúdo */
+#conteudo {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container principal .card */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Grid para os pôsteres */
+.grid-poster {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%; /* Garantir que ocupe toda a largura do container */
+    max-width: 1200px; /* Definir uma largura máxima para o grid */
+    margin: 0 auto; /* Centraliza o grid dentro do container */
+}
+
+/* Estilo dos pôsteres */
+.poster {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Efeito de zoom e tilt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Imagem do pôster */
+.poster-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /* Efeito de zoom */
+}
+
+/* Efeito de zoom no pôster */
+.poster:hover .poster-image {
+    transform: scale(1.1); /* Aumenta a imagem no hover */
+}
+
+/* Informações curtas abaixo do pôster */
+.poster-info {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito de suavização para quando o mouse sai */
+.poster:hover .poster-info {
+    opacity: 0.9;
+}
+
+/* Responsividade - Ajustar para telas menores */
+@media (max-width: 1024px) {
+    .grid-poster {
+        grid-template-columns: repeat(2, 1fr); /* Dois pôsteres por linha em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-poster {
+        grid-template-columns: 1fr; /* Um pôster por linha em telas muito pequenas */
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------
+
+/* Card onde o conteúdo será carregado */
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    min-height: 200px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+}
+/*----------------------------------------------------------------------------------------------------
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------
+
+/* Rodapé fixo */
+.footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 1%;
+    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    z-index: 100;
+
+}
