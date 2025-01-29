@@ -21,8 +21,7 @@ body {
     max-width: 600px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
-
-/* Menu */
+/*-------------------------------------------------------------------------------------------------------------
 /* Menu */
 .menu {
     width: 100%;
@@ -44,6 +43,9 @@ body {
     white-space: nowrap;
     transform: translateY(-50%); /* Centraliza verticalmente */
     animation: moverTexto 15s linear infinite; /* Animação infinita e suave */
+    pointer-events: none; /* Não permite interação com o texto */
+    user-select: none; /* Não permite seleção do texto */
+    -webkit-user-select: none; /* Garantia para Safari */
 }
 
 /* Animação de movimento */
@@ -55,6 +57,7 @@ body {
         left: 100%;
     }
 }
+
 
 .menu ul {
     list-style: none;
@@ -83,6 +86,92 @@ body {
     color: black;
     border-radius: 5px;
 }
+/*--------------------------------------------------------------------------------------------------
+/* Estilo do container do conteúdo */
+#conteudo {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container principal .card */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Grid para os pôsteres */
+.grid-poster {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%; /* Garantir que ocupe toda a largura do container */
+    max-width: 1200px; /* Definir uma largura máxima para o grid */
+    margin: 0 auto; /* Centraliza o grid dentro do container */
+}
+
+/* Estilo dos pôsteres */
+.poster {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Efeito de zoom e tilt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Imagem do pôster */
+.poster-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out; /* Efeito de zoom */
+}
+
+/* Efeito de zoom no pôster */
+.poster:hover .poster-image {
+    transform: scale(1.1); /* Aumenta a imagem no hover */
+}
+
+/* Informações curtas abaixo do pôster */
+.poster-info {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito de suavização para quando o mouse sai */
+.poster:hover .poster-info {
+    opacity: 0.9;
+}
+
+/* Responsividade - Ajustar para telas menores */
+@media (max-width: 1024px) {
+    .grid-poster {
+        grid-template-columns: repeat(2, 1fr); /* Dois pôsteres por linha em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-poster {
+        grid-template-columns: 1fr; /* Um pôster por linha em telas muito pequenas */
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------
 
 /* Card onde o conteúdo será carregado */
 .card {
@@ -94,8 +183,74 @@ body {
     min-height: 200px;
     text-align: center;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
 }
+/*----------------------------------------------------------------------------------------------------
+
+/* Estilo para o menu de redes sociais */
+#social-menu {
+    position: fixed;
+    bottom: -80px; /* Começa fora da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, bottom 0.3s ease;
+}
+
+/* Estilo da lista dentro do menu */
+#social-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#social-menu ul li {
+    margin: 10px 0;
+}
+
+#social-menu ul li a {
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+#social-menu ul li a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom nos ícones ao passar o mouse */
+#social-menu ul li a:hover img {
+    transform: scale(1.1);
+}
+
+/* Exibição do menu quando o mouse passa sobre o footer */
+footer:hover + #social-menu {
+    opacity: 1;
+    visibility: visible;
+    bottom: 60px; /* Move o menu para cima */
+}
+
+/* Estilo do footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------
 
 /* Rodapé fixo */
 .footer {
